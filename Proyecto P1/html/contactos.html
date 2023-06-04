@@ -2,50 +2,41 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Contactos</title>
-<link rel="icon" type="imagen/png" href="../img-log/favicon.png">
-</head>
+<title>Contactos: </title>
+	
+</head><br><br>
 <body style="margin: 0; padding: 0;">
-<div style="background-color: #333333; color: white; font-size: 20px; text-align: right">
-      Contactanos: <a href="https://wa.me/+593997884812" target="_blank">
-        <img src="../img-log/whatsApp.png" alt="WhatsApp" style="width: 20px; height: 20px; margin-left: 5px;">
-      </a> |
-      <a href="https://www.instagram.com/steven_jpozo24" target="_blank">
-        <img src="../img-log/instagram.png" alt="Instagram" style="width: 20px; height: 20px; margin-left: 5px;">
-      </a> |
-      <a href="https://www.facebook.com/carlos.granda.567" target="_blank">
-        <img src="../img-log/facebook.png" alt="Facebook" style="width: 25px; height: 25px; margin-left: 6px;">
-      </a>
-  </div>
-<div id="header" style="background: #434343;">
-  <table width="100%">
-    <tr>
-      <td width="20%" align="center"><img src="../img-log/logo.png" width="15%" alt="" /></td>
-      <td width="80%"><form style="width: 100%; display: flex; align-items: center;">
-          <input name="busqueda" type="text" placeholder="Buscar..." style="flex: 1; padding: 10px;">
-          <input type="submit" value="Buscar" style="background-color: #007bff; color: #fff; border: none; padding: 10px 20px; margin-left: 10px; cursor: pointer; margin-bottom: 0;">
-        </form></td>
-    </tr>
-  </table>
-  <table width="100%">
-    <tr style="text-align: center; font-family: Arial, sans-serif; color: white;">
-      <td width="20%"><a href="../index.html" style="color: inherit; text-decoration: none; font-size: 20px; display: block; margin-bottom: 10px;">Inicio</a></td>
-      <td width="20%"><a href="productos.html" style="color: inherit; text-decoration: none; font-size: 20px; display: block; margin-bottom: 10px;">Productos</a></td>
-      <td width="20%"><a href="contactos.html" style="color: inherit; text-decoration: none; font-size: 20px; display: block; margin-bottom: 10px;">Contactos</a></td>
-      <td width="20%"><a href="pedidos.html" style="color: inherit; text-decoration: none; font-size: 20px; display: block;">Pedidos</a></td>
-    </tr>
-  </table>
-  </div>
-  <div id="content" style="background-color: white;">
-    <p>Hola</p>
-  </div>
-  <div id="footer" style="background-color: #333333; color: white; font-size: 16px; padding: 10px; text-align: center;">
-    <div height: 80%>
-      <ul style="list-style-type: none; padding: 0;">
-        <a href="../index.html" style="color: white; text-decoration: none;">Inicio - </a> <a href="#" style="color: white; text-decoration: none;">Productos - </a> <a href="#" style="color: white; text-decoration: none;">Contacto - </a> <a href="#" style="color: white; text-decoration: none;">Nosotros - </a>
-      </ul>
-    </div>
-    <p>Derechos de autor &copy; 2023. Todos los derechos reservados.</p>
-  </div>
+	<form id="form1" name="form1" method="post" action="../php/envioContactos.php" target="iframe_cont">
+		<fieldset style=" border-radius: 100px;margin-left: 25%; margin-right: 25%;border-color: #D660EC; padding: 20px;">
+			<center>
+				<p>
+					<label for="name">Nombres:</label><br>
+					<input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu nombre" required>
+				</p>
+				<p>
+					<label>Asunto: </label><br>
+					<textarea id="asunto" name="asunto" rows="2" cols="40" style="border: 0.5px ridge #ccc; padding: 3px;"></textarea>
+				</p>
+		  		<p>
+					<label for="email">Email:</label><br>
+					<input type="email" name="email" id="email" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="example@email.com" required>
+		  		</p>
+				<p>
+					<label>Motivo de consulta: </label><br>
+					<textarea id="consulta" name="consulta" rows="10" cols="40" style="border: 0.5px ridge #ccc; padding: 3px;"></textarea>
+				</p>
+				<p>
+					<label>N° pedido: </label><br>
+					<input type="text" id="nPedido" name="nPedido" style="border: 0.5px ridge #ccc; padding: 3px;" required>
+				</p>
+				
+		</center>
+		<p style="text-align: center;">
+			<input  type="submit" name="enviar" id="submit" value="Enviar">
+			<input type="reset" name="reset" id="reset" value="Restablecer">
+	    </p>
+	</fieldset>
+	</form>
+
 </body>
 </html>
