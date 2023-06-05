@@ -9,37 +9,42 @@
 <body>
 	<center>
 	<form id="form1" name="form1" method="post" action="../php/envio.php" target="iframe_cont">
-		<fieldset style=" border-radius: 100px;margin-left: 25%; margin-right: 25%;border-color: #D660EC; padding: 20px;">
+		<fieldset style=" border-radius: 0px;margin-left: 15%; margin-right: 15%;border-color: #D660EC; padding: 20px;">
 			<legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>PEDIDO DEL CLIENTE</b></legend>
 
-			<fieldset style=" border-radius: 10px; margin-top:auto;margin-left: auto; margin-right: auto;text-align:left;border-color: #D660EC; padding: 20px;">
+			<fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto;text-align:left;border-color: #D660EC; padding: 20px; flex: 1; float: left;">
 				<legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Datos personales</b></legend>
 				<center>
+					<h4>Datos</h4>
 				<p>
-					<label for="name">Nombres:</label>
-					<input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu nombre" required>
+					<input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu nombre" required><br>
+					<label for="name" style="opacity: 0.5;">Nombres</label>
 				</p>
+
 				<p>
-					<label for="apellido">Apellidos:</label>
-					<input type="text" id="apellido" name="apellido" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu apellido" required>
+					<input type="text" id="apellido" name="apellido" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu apellido" required><br>
+					<label for="apellido" style="opacity: 0.5;">Apellidos</label>
 				</p>
+
 				<p>
-					<label for="phone">Telefono:</label>
 					<input type="text" id="phone" name="phone"
-					style="width: 300px;" maxlength="10" minlength="10" placeholder="0998 500 498" pattern="[0-9]{10}" required>
+					style="width: 300px;" maxlength="10" minlength="10" placeholder="0998 500 498" pattern="[0-9]{10}" required><br>
+					<label for="phone" style="opacity: 0.5;">Telefono</label>
 				</p>
+
 				<p>
-					<label for="cedula">Cédula:</label>
-					<input type="text" id="cedula" name="cedula" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" maxlength="10" minlength="10" placeholder="1799999999" required>
+					<input type="text" id="cedula" name="cedula" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" maxlength="10" minlength="10" placeholder="1799999999" required><br>
+					<label for="cedula" style="opacity: 0.5;">Cedula</label>
 				</p>
+
 				<p>
-					<label for="email">Email:</label>
-					<input type="email" name="email" id="email" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="example@email.com" required>
+					<input type="email" name="email" id="email" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="example@email.com" required><br>
+					<label for="email" style="opacity: 0.5;">Email:</label>
 				</p>
 				</center>
 			</fieldset>
 
-			<fieldset style=" border-radius: 10px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px;">
+			<fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px;  flex:1;">
 				<legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Domicilio de Entrega</b></legend>
 				<center>
 				<p>
@@ -89,7 +94,7 @@
 			</center>
 			</fieldset>
 
-			<fieldset style=" border-radius: 10px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px; ">
+			<fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px; float: left; flex: 1;">
 				<legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Envio</b></legend><br>
 				<center>
       <label for="metodoEnvio">Seleccione el método de envío:</label>
@@ -110,7 +115,7 @@
       </center>
 			</fieldset>
 
-			<fieldset style=" border-radius: 10px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px;">
+			<fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px; ">
 				<legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Precio</b></legend><br>  
 				<center> 		
 					<label>Subtotal: 790$</label><br>
