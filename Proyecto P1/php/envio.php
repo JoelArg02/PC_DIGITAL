@@ -3,7 +3,7 @@
 <head>
   <title>Formulario PHP</title>
 </head>
-<body>
+<body style="margin: 0; padding: 0; height: 900px" bgcolor="#F0F2F5" >
   <center>
   <h1>GRACIAS POR COMPRAR EN TEC DOTCH</h1>
   
