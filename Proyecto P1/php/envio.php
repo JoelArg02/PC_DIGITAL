@@ -5,7 +5,7 @@
 </head>
 <body style="margin: 0; padding: 0; height: 900px" bgcolor="#F0F2F5" >
   <center>
-  <h1>GRACIAS POR COMPRAR EN TEC DOTCH</h1>
+  <h1>GRACIAS POR COMPRAR</h1>
   
   <?php
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,14 +47,14 @@
     $mensaje .= "------------------------------------------------\n";
 
     // Dirección de correo a la que se enviará el formulario
-    $para = "tucorreo@example.com";
+    $para = $email;
 
     // Asunto del correo
-    $asunto = "Factura de compra en Tec Dotch";
+    $asunto = "Factura de compra";
 
     // Cabeceras del correo
-    $cabeceras = "From: remitente@example.com" . "\r\n" .
-        "Reply-To: remitente@example.com" . "\r\n" .
+    $cabeceras = "From: ventas@pcdigitalec.net" . "\r\n" .
+        "Reply-To: " . $email . "\r\n" .
         "X-Mailer: PHP/" . phpversion();
 
     // Envío del correo

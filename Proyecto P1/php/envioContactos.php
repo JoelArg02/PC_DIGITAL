@@ -27,11 +27,11 @@
     $mensaje .= "------------------------------------------------\n";
 
     // Dirección de correo a la que se enviará el formulario
-    $para = "joel.darguello@gmail.com";
+    $para = $email;
 
     // Cabeceras del correo
-    $cabeceras = "From: joelitodaniel02@gmail.com" . "\r\n" .
-        "Reply-To: remitente@example.com" . "\r\n" .
+    $cabeceras = "From: ventas@pcdigitalec.net" . "\r\n" .
+        "Reply-To: " . $email . "\r\n" .
         "X-Mailer: PHP/" . phpversion();
 
     // Envío del correo
