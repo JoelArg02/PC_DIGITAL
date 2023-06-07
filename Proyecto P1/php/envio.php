@@ -21,30 +21,48 @@
     $metodoEnvio = $_POST["metodoEnvio"];
     $metodoPago = $_POST["metodoPago"];
 
-    echo "------------------------------------------------\n";
-    echo "                  FACTURA                       \n";
-    echo "------------------------------------------------\n";
-    echo "<p>Nombres: " . $nombres . "</p>";
-    echo "<p>Apellidos: " . $apellidos . "</p>";
-    echo "<p>Cédula: " . $cedula . "</p>";
-    echo "<p>Teléfono: " . $telefono . "</p>";
-    echo "<p>Correo electrónico: " . $correo . "</p>";
-    echo "------------------------------------------------\n";
-    echo "Información de Entrega:                         \n";
-    echo "------------------------------------------------\n";
-    echo "<p>Provincia: " . $provincia . "</p>";
-    echo "<p>Ciudad: " . $ciudad . "</p>";
-    echo "<p>Dirección de domicilio: " . $direccion . "</p>";
-    echo "<p>Referencia: " . $referencia . "</p>";
-    echo "------------------------------------------------\n";
-    echo "Información de Pago:                            \n";
-    echo "------------------------------------------------\n";
-    echo "<p>Metodo de envio: " . $metodoEnvio . "</p>";
-    echo "<p>Metodo de pago: " . $metodoPago . "</p>";
-    echo "------------------------------------------------\n";
-    echo "Gracias por su compra                            \n";
-    echo "------------------------------------------------\n";
+    // Crear el mensaje del correo
+    $mensaje = "------------------------------------------------\n";
+    $mensaje .= "                  FACTURA                       \n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Nombres: " . $nombres . "\n";
+    $mensaje .= "Apellidos: " . $apellidos . "\n";
+    $mensaje .= "Cédula: " . $cedula . "\n";
+    $mensaje .= "Teléfono: " . $telefono . "\n";
+    $mensaje .= "Correo electrónico: " . $correo . "\n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Información de Entrega:                         \n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Provincia: " . $provincia . "\n";
+    $mensaje .= "Ciudad: " . $ciudad . "\n";
+    $mensaje .= "Dirección de domicilio: " . $direccion . "\n";
+    $mensaje .= "Referencia: " . $referencia . "\n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Información de Pago:                            \n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Metodo de envio: " . $metodoEnvio . "\n";
+    $mensaje .= "Metodo de pago: " . $metodoPago . "\n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Gracias por su compra                            \n";
+    $mensaje .= "------------------------------------------------\n";
 
+    // Dirección de correo a la que se enviará el formulario
+    $para = "tucorreo@example.com";
+
+    // Asunto del correo
+    $asunto = "Factura de compra en Tec Dotch";
+
+    // Cabeceras del correo
+    $cabeceras = "From: remitente@example.com" . "\r\n" .
+        "Reply-To: remitente@example.com" . "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+
+    // Envío del correo
+    if (mail($para, $asunto, $mensaje, $cabeceras)) {
+        echo "<p>El formulario se ha enviado correctamente a tu correo.</p>";
+    } else {
+        echo "<p>Hubo un error al enviar el formulario.</p>";
+    }
   }
   ?>
   </center>

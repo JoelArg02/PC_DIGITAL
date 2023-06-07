@@ -12,19 +12,34 @@
     $nombres = $_POST["name"];
     $correo = $_POST["email"];
     $asunto = $_POST["asunto"];
-	$consulta = $_POST["consulta"];
-	$nPedidos = $_POST["nPedido"];
+    $consulta = $_POST["consulta"];
+    $nPedidos = $_POST["nPedido"];
 
-    echo "------------------------------------------------\n";
-    echo "           Comentario de cliente                \n";
-    echo "------------------------------------------------\n";
-    echo "<p>Nombres: " . $nombres . "</p>";
-    echo "<p>Correo electrónico: " . $correo . "</p>";
-    echo "<p>Asunto: " . $asunto . "</p>";
-    echo "<p>Motivo de consulta: " . $consulta . "</p>";
-    echo "<p>N° de pedido: " . $nPedidos . "</p>";
-    echo "------------------------------------------------\n";
+    // Crear el mensaje del correo
+    $mensaje = "------------------------------------------------\n";
+    $mensaje .= "           Comentario de cliente                \n";
+    $mensaje .= "------------------------------------------------\n";
+    $mensaje .= "Nombres: " . $nombres . "\n";
+    $mensaje .= "Correo electrónico: " . $correo . "\n";
+    $mensaje .= "Asunto: " . $asunto . "\n";
+    $mensaje .= "Motivo de consulta: " . $consulta . "\n";
+    $mensaje .= "N° de pedido: " . $nPedidos . "\n";
+    $mensaje .= "------------------------------------------------\n";
 
+    // Dirección de correo a la que se enviará el formulario
+    $para = "joel.darguello@gmail.com";
+
+    // Cabeceras del correo
+    $cabeceras = "From: joelitodaniel02@gmail.com" . "\r\n" .
+        "Reply-To: remitente@example.com" . "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+
+    // Envío del correo
+    if (mail($para, $asunto, $mensaje, $cabeceras)) {
+        echo "<p>El formulario se ha enviado correctamente a tu correo.</p>";
+    } else {
+        echo "<p>Hubo un error al enviar el formulario.</p>";
+    }
   }
   ?>
   </center>
