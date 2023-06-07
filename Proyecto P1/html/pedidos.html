@@ -7,14 +7,18 @@
 </head>
 
 <body style="margin: 0; padding: 0; height: 550px" bgcolor="#F0F2F5" >
-<div id="sep" style="height: 20px"></div>
 <center>
-  <form id="form1" name="form1" method="post" action="../php/envio.php" target="iframe_cont">
-    <fieldset style=" border-radius: 0px;margin-left: 15%; margin-right: 15%;border-color: #D660EC; padding: 20px;">
-      <legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>PEDIDO DEL CLIENTE</b></legend>
-      <fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto;text-align:left;border-color: #D660EC; padding: 20px; flex: 1; float: left;">
-        <legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Datos personales</b></legend>
-        <center>
+<form id="form1" name="form1" method="post" action="../php/envio.php" target="iframe_cont">
+	
+	<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td>
+		<table width="200" border="1">
+  <tbody>
+    <tr>
+      <td>
+		<center>
           <h4>Datos</h4>
           <p>
             <input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu nombre" required>
@@ -43,10 +47,9 @@
             <label for="email" style="opacity: 0.5;">Email:</label>
           </p>
         </center>
-      </fieldset>
-      <fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px;  flex:1;">
-        <legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Domicilio de Entrega</b></legend>
-        <center>
+		</td>
+      <td>
+		  <center>
           <p>
             <label for="Dirección"><b>Dirección:</b></label>
             <br>
@@ -101,12 +104,16 @@
             <br>
             <br>
           </p>
-        </center>
-      </fieldset>
-      <fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px; float: left; flex: 1;">
-        <legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Envio</b></legend>
-        <br>
-        <center>
+        </center>	
+	  </td>
+    </tr>
+  </tbody>
+</table>
+		</td>
+    </tr>
+    <tr>
+      <td>
+		<center>
           <label for="metodoEnvio">Seleccione el método de envío:</label>
           <select id="metodoEnvio" name="metodoEnvio" style="width: 300px;" required>
             <option value="">Seleccione</option>
@@ -126,24 +133,22 @@
           <br>
           <br>
         </center>
-      </fieldset>
-      <fieldset style=" border-radius: 0px; margin-top:auto;margin-left: auto; margin-right: auto; text-align:left; border-color: #D660EC; padding: 20px; ">
-        <legend style="text-align: center; font-weight: bold; font-size: 20px;"><b>Precio</b></legend>
-        <br>
-        <center>
-          <label>Subtotal: 790$</label>
-          <br>
-          <label>IVA: 20.79$</label>
-          <br>
-          <label>Total: 810.79$</label>
-        </center>
-      </fieldset>
-      <p style="text-align: center;">
+		</td>
+	
+    </tr>
+    <tr>
+      <td>
+		  <p style="text-align: center;">
         <input  type="submit" name="enviar" id="submit" value="Comprar">
         <input type="reset" name="reset" id="reset" value="Restablecer">
-      </p>
-    </fieldset>
-  </form>
+     	 </p>
+		</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+</form>
 </center>
 </body>
 </html>
