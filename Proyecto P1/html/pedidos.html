@@ -6,57 +6,76 @@
 <link rel="icon" type="image/png" href="../img-log/logo.png"/>
 </head>
 
-<body style="margin: 0; padding: 0; height: 550px" bgcolor="#F0F2F5">
+<body style="margin: 0; padding: 0; height: 550px" bgcolor="#F0F2F5" ><br>
+	
 <center>
-  <form id="form1" name="form1" method="post" action="../php/envio.php" target="iframe_cont">
-    <table width="400" border="1" cellspacing="0" cellpadding="10">
-      <tr>
-        <td>
-          <h4>Datos</h4>
+<form id="form1" name="form1" method="post" action="../php/envio.php" target="iframe_cont">
+	
+	<table width="802" border="0" cellpadding="20px">
+  <tbody>
+    <tr>
+      <td><h2><center>Pedidos</center></h2><hr style="border-color: aqua"></td>
+    </tr>
+    <tr>
+      <td width="713">
+		<table width="797" border="0" cellpadding="20px">
+  <tbody>
+    <tr>
+      <td style="position: relative; " width="398"  >
+  
+    <img src="../img-log/fondo.png" width="100%" height="100%" alt="" style="position: absolute; top: 0; left: 0; opacity: 0.9; pointer-events: none; z-index: -1; border-radius: 20px">
+    <center>
+      <h3>Datos personales del cliente:</h3>
+      <p>
+        <input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z]+\s?[A-Za-z]*" placeholder="Escribe tu nombre" required>
+        <br>
+        <label for="name" style="opacity: 1;">Nombres</label>
+      </p>
+
           <p>
-            <label for="name" style="opacity: 0.5;">Nombres:</label>
+            <input type="text" id="apellido" name="apellido" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z]+\s?[A-Za-z]*" placeholder="Escribe tu apellido" required>
             <br>
-            <input type="text" id="name" name="name" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu nombre" required>
+            <label for="apellido" style="opacity: 1;">Apellidos</label>
           </p>
           <p>
-            <label for="apellido" style="opacity: 0.5;">Apellidos:</label>
+            <input type="text" id="phone" name="phone"
+					style="width: 300px;" maxlength="10" minlength="10" placeholder="0998 500 498" pattern="[0-9]{10}" required>
             <br>
-            <input type="text" id="apellido" name="apellido" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[A-Za-z\s]+" placeholder="Escribe tu apellido" required>
+            <label for="phone" style="opacity: 1;">Telefono</label>
           </p>
           <p>
-            <label for="phone" style="opacity: 0.5;">Teléfono:</label>
-            <br>
-            <input type="text" id="phone" name="phone" style="width: 300px;" maxlength="10" minlength="10" placeholder="0998 500 498" pattern="[0-9]{10}" required>
-          </p>
-          <p>
-            <label for="cedula" style="opacity: 0.5;">Cédula:</label>
-            <br>
             <input type="text" id="cedula" name="cedula" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" maxlength="10" minlength="10" placeholder="1799999999" required>
+            <br>
+            <label for="cedula" style="opacity: 1;">Cedula</label>
           </p>
           <p>
-            <label for="email" style="opacity: 0.5;">Email:</label>
-            <br>
             <input type="email" name="email" id="email" style="border: 0.5px ridge #ccc; padding: 3px; width: 300px;" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="example@email.com" required>
-          </p>
-        </td>
-        <td>
-          <p>
-            <label for="calle" style="opacity: 0.5;">Calle y número:</label>
             <br>
-            <input type="text" id="calle" name="calle" style="width: 300px;" required>
+            <label for="email" style="opacity: 1;">Email:</label>
           </p>
+      </center>
+	  
+		</td>
+      <td style="position: relative;" width="398">
+		  <img src="../img-log/fondo.png" width="100%" height="100%" alt="" style="position: absolute; top: 0; left: 0; opacity: 0.9; pointer-events: none; z-index: -1; border-radius:  20px">
+		  <center>
           <p>
-            <label for="Referencia" style="opacity: 0.5;">Referencia:</label>
+            <label for="Dirección"><h3>Dirección:</h3></label>
+          
+            <input type="text" id="calle" name="calle" style="width: 300px;" required>
+            <br>
+            <label for="Calle y numero" style="opacity: 1;">Calle y número</label>
+            <br>
             <br>
             <input type="text" id="Referencia" name="Referencia" style="width: 300px;" required>
-          </p>
-          <p>
-            <label for="Ciudad" style="opacity: 0.5;">Ciudad:</label>
+            <br>
+            <label for="Referencia" style="opacity: 1;">Referencia</label>
+            <br>
             <br>
             <input type="text" id="Ciudad" name="Ciudad" style="width: 300px;" required>
-          </p>
-          <p>
-            <label for="Provincia" style="opacity: 0.5;">Provincia:</label>
+            <br>
+            <label for="Ciudad" style="opacity: 1;">Ciudad</label>
+            <br>
             <br>
             <select name="Provincia" id="Provincia" style="width: 300px;" required>
               <option>Esmeraldas</option>
@@ -83,44 +102,64 @@
               <option>Sucumbios</option>
               <option>Zamora Chinchipe</option>
             </select>
-          </p>
-          <p>
-            <label for="Pais" style="opacity: 0.5;">País:</label>
+            <br>
+            <label for="Provincia" style="opacity: 1;">Provincia</label>
+            <br>
             <br>
             <input type="text" id="Pais" name="Pais" style="width: 300px;" required>
+            <br>
+            <label for="Pais" style="opacity: 1;">País</label>
+            <br>
+            <br>
           </p>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
+        </center>	
+	  </td>
+    </tr>
+  </tbody>
+</table>
+		</td>
+    </tr>
+    <tr>
+      <td style="position: relative;"><br>
+		  <img src="../img-log/fondo.png" width="100%" height="100%" alt="" style="position: absolute; top: 0; left: 0; opacity: 0.9; pointer-events: none; z-index: -1; borde; border-radius: 50px;">
+		<center>
           <label for="metodoEnvio">Seleccione el método de envío:</label>
-          <br>
           <select id="metodoEnvio" name="metodoEnvio" style="width: 300px;" required>
             <option value="">Seleccione</option>
-            <option>Envío por servientrega</option>
-            <option>Envío por encomienda</option>
+            <option> Envío por servientrega</option>
+            <option> Envío por encomienda</option>
           </select>
           <br>
           <br>
           <label for="metodoPago">Seleccione el método de pago:</label>
-          <br>
-          <select id="metodoPago" name="metodoPago" style="width: 300px;" required>
+          <select id="metodoPago" name="metodoPago"  style="width: 300px;" required>
             <option value="">Seleccione</option>
-            <option>Tarjeta de Crédito</option>
-            <option>PayPal</option>
-            <option>Transferencia Bancaria</option>
-            <option>Efectivo</option>
+            <option> Tarjeta de Crédito</option>
+            <option> PayPal</option>
+            <option> Transferencia Bancaria</option>
+            <option> Efectivo</option>
           </select>
           <br>
           <br>
-          <p style="text-align: center;">
-            <input  type="submit" name="enviar" id="submit" value="Comprar">
-            <input type="reset" name="reset" id="reset" value="Restablecer">
-          </p>
-        </td>
-      </tr>
-    </table>
-  </form>
+        </center>
+		</td>
+	
+    </tr>
+    <tr>
+      <td>
+		  <p style="text-align: center;">
+        <input  type="submit" name="enviar" id="submit" value="Comprar">
+        <input type="reset" name="reset" id="reset" value="Restablecer">
+     	 </p>
+		</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+</form>
 </center>
+	
+	<p><center>En caso de haber algún incoveniente al llenar su formulario puede informarnos dirigiendose al apartado de  <a href="contactos.html" style="text-decoration: none;"><strong>contactos</strong></a></center></p>
 </body>
 </html>
