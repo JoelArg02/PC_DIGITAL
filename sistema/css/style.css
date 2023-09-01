@@ -1,0 +1,639 @@
+@import url(../fonts/GothamBold.css);
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ededed;
+    display: flex;
+    flex-direction: column;
+}
+
+html,
+body,
+#container {
+    height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 26px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;    letter-spacing: 1px;
+}
+
+span {
+    font-family: 'Roboto', sans-serif;    letter-spacing: 1px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header {
+    color: #FFF;
+    background: linear-gradient(to right, rgb(243, 37, 51), rgb(179, 0, 75));
+    height: 35px;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.optionsBar {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.optionsBar span {
+    color: #FFF;
+    font-size: 11pt;
+    font-family: 'GothamBook';
+    text-transform: uppercase;
+    margin-left: 30px;
+}
+
+.photouser {
+    margin-left: 30px;
+    width: 25px;
+    height: 25px;
+}
+
+.close {
+    width: 25px;
+    height: 25px;
+}
+
+.optionsBar a {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    margin-left: 30px;
+}
+
+/*Menu vertical*/
+
+nav {
+    background: linear-gradient(to right, rgb(243, 37, 51), rgb(179, 0, 75));
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 35px;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+nav ul>li {
+    position: relative;
+}
+
+nav a {
+    color: #FFF;
+    display: block;
+    font-size: 10pt;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: background .5s;
+    border-bottom: 1px solid #ededed;
+    text-align: left;
+    width: 100%;
+}
+
+nav .principal>a {
+    background-size: 10px;
+    background-position: 94% center;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav li ul {
+    background: rgba(179, 0, 75);
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    border-radius: 0 10px 10px 0;
+}
+
+nav li ul a {
+    padding: 10px 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav li ul a:hover {
+    background: rgba(255, 156, 21);
+    transform: scale(1.02);
+}
+
+nav li ul li:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+
+
+#container {
+    padding: 90px 15px 15px;
+    margin-left: 250px;
+    width: calc(100% - 250px);
+}
+
+
+
+.errorArchivo {
+    font-size: 16px;
+    font-family: arial;
+    color: #cc0000;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.delPhoto {
+    color: #FFF;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: red;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    z-index: 10;
+}
+
+#tbl_list_productos img {
+    width: 50px;
+}
+
+.imgProductoDelete {
+    width: 175px;
+}
+
+.ui-container {
+    margin-top: 20px;
+}
+
+.ui-box {
+    background: #fff;
+    min-width: 200px;
+
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.12);
+    border: 1px solid #bcc0cf;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.ui-box .ui-box-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    padding: 15px 18px 5px 18px;
+}
+
+.ui-box .ui-box-content {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 10px 18px;
+}
+
+.ui-box .ui-box-footer {
+    background: #dcdfe8;
+    font-size: 14px;
+    color: #333;
+    padding: 12px 10px;
+}
+
+.ui-box .ui-box-footer.right-aligned {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ui-form .ui-form-group {
+    margin-bottom: 15px;
+}
+
+.ui-form .ui-form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.ui-form .ui-form-group input,
+.form-control {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ui-form .ui-form-group select {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.ui-form .ui-form-group input[type="file"] {
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.ui-form .ui-form-group input[type="file"]::-webkit-file-upload-button,
+.ui-form .ui-form-group input[type="file"]::file-selector-button {
+    background: #006cad;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    padding: 9px 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ui-form .ui-form-group.compound {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group:not(:last-child) {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group label {
+    font-size: 0.85em;
+}
+
+.ui-form .ui-form-group.compound .ui-form-group.button {
+    justify-content: end;
+    align-items: end;
+    margin-top: auto;
+    flex: 0;
+}
+
+.ui-button {
+    background: #ccc;
+    color: #333;
+    display: inline-block;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.ui-button.blue {
+    background: #006cad;
+    color: #fff;
+}
+
+.ui-button.blue:active {
+    background: #005a9c;
+}
+
+.ui-button.red {
+    background: #d9534f;
+    color: #fff;
+}
+
+.ui-button.red:active {
+    background: #c9302c;
+}
+
+.ui-button.green {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.ui-button.green:active {
+    background: #449d44;
+}
+
+.ui-button.orange {
+    background: #f0ad4e;
+    color: #fff;
+}
+
+.ui-button.orange:active {
+    background: #ec971f;
+}
+
+.container-recipes {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.ui-table {
+    width: 100%;
+    min-width: 200px;
+    display: table;
+}
+
+.ui-table>.row {
+    display: table-row;
+}
+
+.ui-table>.row.header {
+    font-weight: 600;
+}
+
+.ui-table>.row>.column {
+    padding: 10px 15px;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.ui-table>.row>.column.buttons .ui-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.ui-table>.row.header {
+    background: none;
+}
+
+.ui-table>.row.header>.column {
+    background: #a5b1c2;
+    color: #fff;
+}
+
+.ui-table>.row.header>.column.min-width {
+    width: 1px;
+    white-space: nowrap;
+}
+
+.ui-table>.row:nth-child(2n) {
+    background: #f5f5f5;
+}
+
+.ui-table.minimal>.row.header>.column {
+    background: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.ui-table.minimal>.row:nth-child(2n) {
+    background: none;
+}
+
+.ui-table.small {
+    font-size: 0.85em;
+}
+
+.ui-table.small>.row>.column {
+    padding: 5px 10px;
+}
+
+.ui-table.small .ui-button {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+.ui-alert {
+    background: #f5f5f5;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.ui-alert.error {
+    background: #f2dede;
+    border: 1px solid #ebccd1;
+    color: #a94442;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+span.help {
+    font-size: 12px;
+    color: #777;
+    display: block;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header {
+        position: static;
+    }
+
+    nav {
+        position: static;
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        text-align: center;
+        width: 50%;
+    }
+
+    .ui-container {
+        padding: 70px 15px 15px;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .ui-box {
+        min-width: auto;
+        margin: 10px 0;
+    }
+
+    .ui-box-title {
+        font-size: 16px;
+    }
+
+    .ui-table th,
+    .ui-table td {
+        padding: 8px;
+    }
+
+    .ingredients-list .name {
+        font-size: 12px;
+    }
+
+    .ui-form .ui-form-group label {
+        font-size: 12px;
+    }
+
+    .ui-form .ui-form-group input,
+    .form-control {
+        font-size: 12px;
+    }
+
+    .ui-button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .container-recipes {
+        max-width: 100%;
+    }
+
+    .ui-table>.row>.column {
+        padding: 8px 10px;
+    }
+}
+
+.alert {
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.msg_info {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        position: static;
+        top: 0;
+        left: 0;
+        bottom: auto;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    nav a {
+        width: auto;
+        padding: 10px;
+        text-align: center;
+    }
+}
