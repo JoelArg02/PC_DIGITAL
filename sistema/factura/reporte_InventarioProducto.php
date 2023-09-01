@@ -53,7 +53,7 @@ $pdf = new FPDF('L');
 $pdf->AddPage();
 $pdf->SetFont('Courier', 'B', 16);
 $pdf->Cell(0, 10, 'Reporte de Inventario Producto', 0, 1, 'C');
-$pdf->Cell(0, 10, 'Citaviso', 0, 1, 'C');
+$pdf->Cell(0, 10, 'PC DIGITAL', 0, 1, 'C');
 
 
 

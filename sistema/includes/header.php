@@ -50,7 +50,7 @@ if (empty($_SESSION['active'])) {
 
 <header>
 	<div class="header">
-		<h1>Citaviso</h1>
+		<h1>PC DIGITAl</h1>
 		<div class="optionsBar">
 			<p>Cargo: <?php echo $_SESSION['cargo']?>   | </p>
 			<p>Ecuador, <?php echo fechaC(); ?></p>
