@@ -75,7 +75,7 @@ if (!empty($_SESSION['active'])) {
         <h1>Inicia sesión</h1>
         <input type="text" id="name" name="usuario" placeholder="Usuario" />
         <input type="password" id="apellido" name="clave" placeholder="Contraseña" />
-        <a href="#">¿Olvidaste tu contrasena?</a>
+        <a href="#">¿Olvidaste tu contraseña?</a>
         <input type="submit" value="INGRESAR" id="ingresar" class="button">
         <label class="alert" id="alerta">
           <?php echo isset($alert) ? $alert : ''; ?>

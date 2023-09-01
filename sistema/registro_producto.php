@@ -53,18 +53,9 @@ include "../conexion.php";
 				<label for="precio">Precio </label>
 				<input type="number" name="precio" id="precio" step="0.01" placeholder="Precio del producto" min="0"
 					required>
-
-				<label for="contenedores">Cantidad de Contenedores</label>
-				<input type="number" name="contenedores" id="contenedores" placeholder="Contenedores" min="1" value="1"
+				<label for="exitencia">Existencia </label>
+				<input type="number" name="existencia" id="existencia" placeholder="Existencia del producto" min="0"
 					required>
-
-				<label for="cajasPorContenedor">Cajas por Contenedor</label>
-				<input type="number" name="cajasPorContenedor" id="cajasPorContenedor"
-					placeholder="Cajas por Contenedor" min="1" value="1" required>
-
-				<label for="unidadesPorCaja">Unidades por Caja</label>
-				<input type="number" name="unidadesPorCaja" id="unidadesPorCaja" placeholder="Unidades por Caja"
-					value="1" min="1" required>
 
 				<div class="button-container">
 					<input type="submit" name="submit" value="Registrar" class="btn_save">

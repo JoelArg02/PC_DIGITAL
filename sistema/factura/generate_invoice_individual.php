@@ -83,12 +83,14 @@ if (isset($_GET['order_id'])) {
 
     // Encabezado
     $pdf->SetFont('Courier', 'B', 16);
-    $pdf->Cell(0, 10, utf8_decode("Orden de producción"), 0, 1, 'C');
+    $pdf->Cell(0, 10, utf8_decode("Proforma"), 0, 1, 'C');
     $pdf->SetFont('Courier', 'B', 12);
     $pdf->Cell(0, 10, utf8_decode("Cliente: " . $xml->customer_name), 0, 1);
-    $pdf->Cell(0, 10, utf8_decode("Fecha de pedido: " . $xml->created_at), 0, 1);
+    $pdf->Cell(0, 10, utf8_decode("Fecha de consulta: " . $xml->created_at), 0, 1);
+    $pdf->Ln();  // Agrega un salto de línea
+
     $pdf->Cell(155);
-    $pdf->Cell(35, 7, utf8_decode("Orden Nro. " . $xml->id), 0, 0, 'R');
+    $pdf->Cell(35, 7, utf8_decode("Proforma Nro. " . $xml->id), 0, 0, 'R');
 
 
     $pdf->Ln(10);
@@ -117,7 +119,7 @@ if (isset($_GET['order_id'])) {
     $pdf->SetFont('Courier', 'BI', 10);
     date_default_timezone_set("America/Guayaquil");
     $fechaHoraActual = date("d/m/Y H:i:s");
-    $pdf->Cell(0, 10, utf8_decode("¡Fin de reporte!"), 0, 1, 'C');
+    $pdf->Cell(0, 10, utf8_decode("¡Esperamos verte pronto!"), 0, 1, 'C');
     $pdf->Cell(0, 10, utf8_decode($fechaHoraActual), 0, 1, 'C');
 
 
