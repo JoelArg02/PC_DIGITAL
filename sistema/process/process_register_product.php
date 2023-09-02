@@ -17,10 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $medida = $_POST['medida'];
     $proveedor = $_POST['proveedor'];
-    $precio = $_POST['precio'];
-    $contenedores = $_POST['contenedores'];
-    $cajasPorContenedor = $_POST['cajasPorContenedor'];
-    $unidadesPorCaja = $_POST['unidadesPorCaja'];
+    $precio_iva = $_POST['precio'];
+    $existencia = $_POST['existencia'];
     $usuario_id = $_SESSION['idUser'];
 
     if ($id_measurement === "nueva_medida") {
@@ -39,13 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $inserted_measurement_id = $id_measurement;
     }
 
-    if (empty($producto) || empty($medida) || empty($proveedor) || empty($precio) || empty($unidadesPorCaja) || $precio <= 0 || $unidadesPorCaja <= 0) {
+    if (empty($producto) || empty($medida) || empty($proveedor) || empty($precio_iva) || empty($existencia)) {
         $_SESSION['popup_message'] = 'Todos los campos son necesarios.';
         header("location: ../lista_producto.php");
 
     } else {
-        $totalUnidades = $contenedores * $cajasPorContenedor * $unidadesPorCaja;
-        $query_insert = "INSERT INTO producto (descripcion, medida, proveedor, precio, existencia, usuario_id) VALUES ('$producto', '$medida', '$proveedor', '$precio', '$totalUnidades', '$usuario_id')";
+        $query_insert = "INSERT INTO producto (descripcion, medida, proveedor, precio, existencia, usuario_id) VALUES ('$producto', '$medida', '$proveedor', '$precio_iva', '$existencia', '$usuario_id')";
         $result = mysqli_query($conection, $query_insert);
 
         if ($result) {

@@ -21,7 +21,7 @@ while ($row = $query->fetch_assoc()) {
 
 $customerNames = [];
 
-$query = mysqli_query($conection, "SELECT nombre FROM cliente");
+$query = mysqli_query($conection, "SELECT nombre FROM cliente where estatus = 1");
 
 while ($row = $query->fetch_assoc()) {
     $customerNames[] = $row['nombre'];

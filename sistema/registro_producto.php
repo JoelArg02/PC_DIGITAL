@@ -50,12 +50,17 @@ include "../conexion.php";
 					?>
 				</select>
 
-				<label for="precio">Precio </label>
+				<label for="precio">Precio</label>
 				<input type="number" name="precio" id="precio" step="0.01" placeholder="Precio del producto" min="0"
-					required>
+					required onchange="calcularPrecioIVA()">
+
+				<label for="precio">Precio con IVA</label>
+				<input type="number" name="precio_iva" id="precio_iva" step="0.01" placeholder="Precio con IVA" min="0"
+					required onchange="calcularPrecioSinIVA()">
 				<label for="exitencia">Existencia </label>
 				<input type="number" name="existencia" id="existencia" placeholder="Existencia del producto" min="0"
 					required>
+
 
 				<div class="button-container">
 					<input type="submit" name="submit" value="Registrar" class="btn_save">

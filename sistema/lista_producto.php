@@ -20,6 +20,7 @@ if (!isset($_SESSION['permisos']['permiso_ver_productos']) || $_SESSION['permiso
     <link rel="stylesheet" type="text/css" href="css/style_tables.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="js/functions.js"></script>
 
 </head>
 
@@ -63,8 +64,8 @@ if (!isset($_SESSION['permisos']['permiso_ver_productos']) || $_SESSION['permiso
         <table>
             <tr>
                 <th>Código</th>
+                <th>Tipo</th>
                 <th>Nombre producto</th>
-                <th>Medida</th>
                 <th>Proveedor</th>
                 <th>Precio</th>
                 <th>Stock</th>
@@ -104,11 +105,12 @@ if (!isset($_SESSION['permisos']['permiso_ver_productos']) || $_SESSION['permiso
                         <?php echo $data['codproducto']; ?>
                     </td>
                     <td>
-                        <?php echo $data['descripcion']; ?>
-                    </td>
-                    <td>
                         <?php echo $data['medida']; ?>
                     </td>
+                    <td>
+                        <?php echo $data['descripcion']; ?>
+                    </td>
+
                     <td>
                         <?php echo $data['proveedor']; ?>
                     </td>

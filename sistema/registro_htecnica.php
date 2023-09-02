@@ -11,7 +11,7 @@ if (!isset($_SESSION['permisos']['permiso_crear_hoja_tecnica']) || $_SESSION['pe
 
 $totals = [];
 
-$query = mysqli_query($conection, "SELECT * FROM producto");
+$query = mysqli_query($conection, "SELECT * FROM producto where estatus=1");
 $totals['products'] = mysqli_num_rows($query);
 $products = [];
 

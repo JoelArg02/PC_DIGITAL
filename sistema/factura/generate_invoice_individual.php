@@ -21,10 +21,24 @@ if (isset($_GET['order_id'])) {
 
     $stmt2 = mysqli_query(
         $conection,
-        "SELECT r.*, ordenes_recetas.quantity as quantity, ordenes_recetas.quantity * r.price as total
-        FROM ordenes_recetas
-        LEFT JOIN recipe as r ON r.id = ordenes_recetas.receta_id
-        WHERE orden_id = $order_id"
+        "SELECT 
+        r.id, r.user_id,
+        (SELECT descripcion FROM producto WHERE producto.codproducto = rr.id_product_rule) as descripcion_producto,
+        p.precio, r.estatus, r.created_at, r.updated_at,
+        ord.quantity as quantity,
+        ord.quantity * r.price as total
+    FROM 
+        ordenes_recetas as ord,
+        rule_recipe as rr,
+        recipe as r,
+        producto as p
+    WHERE 
+        r.id = ord.receta_id
+        AND rr.id_recipe = r.id
+        AND ord.orden_id =  $order_id
+        AND ord.receta_id = rr.id_recipe
+        AND ord.receta_id = r.id
+        AND rr.id_product_rule = p.codproducto;"
     );
     $recipes = [];
     $totalPrice = 0; // Inicializar la variable para almacenar el total
@@ -68,7 +82,7 @@ if (isset($_GET['order_id'])) {
     $xmlFilePath = "reporte_individual/ordenes/orden_" . $row['id'] . ".xml";
     $xml->save($xmlFilePath);
 
-   // echo "XML file generated for order ID {$row['id']}.\n";
+    // echo "XML file generated for order ID {$row['id']}.\n";
 
 
 
@@ -86,8 +100,8 @@ if (isset($_GET['order_id'])) {
     $pdf->Cell(0, 10, utf8_decode("Proforma"), 0, 1, 'C');
     $pdf->SetFont('Courier', 'B', 12);
     $pdf->Cell(0, 10, utf8_decode("Cliente: " . $xml->customer_name), 0, 1);
-    $pdf->Cell(0, 10, utf8_decode("Fecha de consulta: " . $xml->created_at), 0, 1);
-    $pdf->Ln();  // Agrega un salto de línea
+    $pdf->Cell(0, 10, utf8_decode("Fecha de elaboracion: " . $xml->created_at), 0, 1);
+    $pdf->Ln(); // Agrega un salto de línea
 
     $pdf->Cell(155);
     $pdf->Cell(35, 7, utf8_decode("Proforma Nro. " . $xml->id), 0, 0, 'R');
@@ -98,17 +112,18 @@ if (isset($_GET['order_id'])) {
     // Tabla de productos
     $pdf->SetFont('Courier', 'B', 12);
     $pdf->SetFillColor(179, 0, 75); // Color de fondo azul claro
-    $pdf->Cell(80, 10, utf8_decode("Producto"), 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, utf8_decode("Precio"), 1, 0, 'C', 1);
-    $pdf->Cell(30, 10, utf8_decode("Cantidad"), 1, 0, 'C', 1);
-    $pdf->Cell(40, 10, utf8_decode("Total"), 1, 1, 'C', 1);
+    $pdf->Cell(105, 10, utf8_decode("Producto"), 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, utf8_decode("Precio"), 1, 0, 'C', 1);
+    $pdf->Cell(25, 10, utf8_decode("Cantidad"), 1, 0, 'C', 1);
+    $pdf->Cell(30, 10, utf8_decode("Total"), 1, 1, 'C', 1);
 
     $pdf->SetFont('Courier', '', 12);
     foreach ($xml->recipes->recipe as $recipe) {
-        $pdf->Cell(80, 10, utf8_decode($recipe->name), 1);
-        $pdf->Cell(40, 10, utf8_decode("$" . $recipe->price), 1, 0, 'R');
-        $pdf->Cell(30, 10, utf8_decode($recipe->quantity), 1, 0, 'C');
-        $pdf->Cell(40, 10, utf8_decode("$" . $recipe->total), 1, 1, 'R');
+        // Ajusta el ancho de la celda para la descripción del producto
+        $pdf->Cell(105, 10, utf8_decode(substr($recipe->descripcion_producto, 0, 30)), 1);
+        $pdf->Cell(30, 10, utf8_decode("$" . $recipe->precio), 1, 0, 'R');
+        $pdf->Cell(25, 10, utf8_decode($recipe->quantity), 1, 0, 'C');
+        $pdf->Cell(30, 10, utf8_decode("$" . $recipe->total), 1, 1, 'R');
     }
     $pdf->SetFont('Courier', 'B', 12);
     $pdf->Cell(155);
@@ -126,9 +141,8 @@ if (isset($_GET['order_id'])) {
     // Guardar o mostrar el PDF
     $pdfFilePath = "reporte_individual/ordenes/factura_" . $row['id'] . ".pdf";
     $pdf->Output($pdfFilePath, "I"); // "F" para guardar el PDF en el servidor
-    $pdf->Output($pdfFilePath, "F"); 
-    
+    $pdf->Output($pdfFilePath, "F");
+
 }
 
 ?>
-
